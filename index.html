@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shivam Purve | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <h1 class="logo">Shivam&nbsp;Purve</h1>
+    <input id="nav-toggle" type="checkbox">
+    <label for="nav-toggle" class="hamburger"><span></span></label>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certs">Certificates</a></li>
+      <li><a href="#resources">AI / ML</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button id="themeBtn" aria-label="toggle theme"><i class="fas fa-moon"></i></button></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <div class="hero-content">
+      <h2>Hey, I’m Shivam 👋</h2>
+      <p>B.Tech @ IIT Tirupati • Web Dev • DSA &amp; AI Enthusiast</p>
+      <a class="btn" href="assets/images/certificates/Shivam_purve_Resume.pdf" download>Download CV</a>
+    </div>
+  </header>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>
+      Passionate about elegant front‑end experiences and deep problem‑solving. When I’m not polishing clones ↗
+      or racking up CodeChef streaks, you’ll find me devouring DSA problems or ML papers.
+    </p>
+    <!-- CodeChef streak badge -->
+    <img class="badge" src="assets/images/badge_codechef.png"
+         alt="CodeChef 5‑day streak badge">
+    <small>5‑day CodeChef coding streak badge</small>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="container">
+    <h2>Tech‑Stack &amp; Tools</h2>
+    <div class="skills">
+      <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>C/C++</span>
+      <span>Git &amp; GitHub</span><span>Responsive Design</span><span>DSA</span><span>Basics of ML</span>
+    </div>
+    <!-- GitHub contribution graph -->
+    <img class="github-stats"
+         src="https://github-readme-stats.vercel.app/api?username=shivam-purve&show_icons=true&theme=tokyonight"
+         alt="GitHub stats">
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="container">
+    <h2>Projects</h2>
+    <div class="filter">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="clone">Clones</button>
+      <button data-filter="js">JavaScript Games</button>
+      <button data-filter="systems">Systems/C</button>
+    </div>
+
+    <div class="project-grid">
+      <!-- Netflix Clone -->
+      <article class="card clone">
+        <img src="assets/images/netflix.png" alt="Netflix clone screenshot">
+        <div><h3>Netflix UI Clone</h3>
+          <p>Sleek Netflix landing page with flex‑grid &amp; animations.</p>
+          <a href="https://shivam-purve.github.io/netflixclone/" target="_blank">Live Demo</a>
+        </div>
+      </article>
+
+      <!-- Tic‑Tac‑Toe -->
+      <article class="card js">
+        <img src="assets/images/tictactoe.png" alt="Tic Tac Toe screenshot">
+        <div><h3>Tic‑Tac‑Toe</h3>
+          <p>Vanilla‑JS grid game with Minimax‑ready logic.</p>
+          <a href="https://shivam-purve.github.io/tic-toegame/" target="_blank">Play</a>
+        </div>
+      </article>
+
+      <!-- Stone Paper Scissors -->
+      <article class="card js">
+        <img src="assets/images/sps.png" alt="Stone Paper Scissors screenshot">
+        <div><h3>Stone‑Paper‑Scissors</h3>
+          <p>Classic best‑of‑five duel in JavaScript.</p>
+          <a href="https://shivam-purve.github.io/stone-paper-scissors/" target="_blank">Play</a>
+        </div>
+      </article>
+
+      <!-- Weather App -->
+      <article class="card js">
+        <img src="assets/images/weather.png" alt="Weather app screenshot">
+        <div><h3>Weather App</h3>
+          <p>Responsive OpenWeather API client with charts.</p>
+          <a href="https://shivam-purve.github.io/weatherapp/" target="_blank">Live Demo</a>
+        </div>
+      </article>
+
+      <!-- Conference Room Booking (C) -->
+      <article class="card systems">
+        <img src="assets/images/confroom.png" alt="CLI booking tool screenshot">
+        <div><h3>Conference‑Room Booking CLI</h3>
+          <p>C program for room add / reserve / cancel commands.</p>
+          <a href="assets/images/conf_room_booking.txt" target="_blank">Source Code</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATES ===== -->
+  <section id="certs" class="container">
+    <h2>Certificates</h2>
+    <div class="cert-grid">
+      <article class="cert">
+        <h3>Basics of Machine Learning</h3>
+        <a href="assets/images/certificates/Shivam_CR640_certificate.pdf" target="_blank">View PDF</a>
+      </article>
+      <article class="cert">
+        <h3>Coursera: English &amp; Academic Prep</h3>
+        <a href="assets/images/certificates/Coursera_shivam.pdf" target="_blank">View PDF</a>
+      </article>
+      <article class="cert">
+        <h3>AI Tools &amp; ChatGPT Expert</h3>
+        <a href="assets/images/certificates/Certificate_AI_Tools.pdf" target="_blank">View PDF</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== AI/ML RESOURCES ===== -->
+  <section id="resources" class="container">
+    <h2>AI / ML Resources 📚</h2>
+    <p>My hand‑picked playlist of free courses, docs &amp; papers.</p>
+    <a class="btn secondary"
+       href="assets/images/certificates/AI_DS_Resources.pdf"
+       target="_blank">Download the Guide</a>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="container">
+    <h2>Let’s Connect</h2>
+    <form action="https://formspree.io/f/your-id" method="POST">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="_replyto" placeholder="Email" required>
+      <textarea name="message" rows="4" placeholder="Message" required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+
+    <ul class="contact-info">
+      <li><i class="fas fa-envelope"></i> <a href="mailto:Shivamraaz79038@gmail.com">Shivamraaz79038@gmail.com</a></li>
+      <li><i class="fas fa-phone"></i> +91‑79038 31483</li>
+      <li><i class="fab fa-github"></i> <a href="https://github.com/shivam-purve" target="_blank">github.com/shivam‑purve</a></li>
+    </ul>
+  </section>
+
+  <footer>© 2025 Shivam Purve</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

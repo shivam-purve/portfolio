@@ -1,0 +1,372 @@
+//project for conference room booking allotment
+
+#include<stdio.h>
+#include<string.h>
+
+int Ganga[700][25]={0};
+int Jamuna[700][25]={0};
+int Saraswathi[700][25]={0};
+
+void input() {
+    char a[100];
+    fgets(a,100,stdin);
+    char d[]=" ";
+
+    char *token = strtok(a,d);
+
+
+
+    if(strcmp(token,"add")==0) {
+        char *name = strtok(NULL,d);
+
+        if(strcmp(name,"Ganga")==0) {
+            char *number = strtok(NULL,d);
+            int i= (number[0]-'0')*100 + (number[1]-'0')*10 + (number[2]-'0');
+            if(Ganga[i][1]==0){
+            for (int j=0;25>j;j++) {
+                Ganga[i][j]=1;
+            }
+            printf("\nRoom added successfully !\n");
+            }
+            else{
+                printf("\nRoom already exists\n");
+            }
+            }
+
+        if(strcmp(name,"Jamuna")==0) {
+            char *number = strtok(NULL,d);
+            int i= (number[0]-'0')*100 + (number[1]-'0')*10 + (number[2]-'0');
+            if(Jamuna[i][1]==0){
+            for (int j=0;25>j;j++) {
+                Jamuna[i][j]=1;
+            }
+            printf("\nRoom added successfully !\n");
+            }
+            else{
+                printf("\nRoom already exists\n");
+            }
+            }
+
+        if(strcmp(name,"Saraswathi")==0) {
+            char *number = strtok(NULL,d);
+            int i= (number[0]-'0')*100 + (number[1]-'0')*10 + (number[2]-'0');
+            if(Saraswathi[i][1]==0){
+            for (int j=0;25>j;j++) {
+                Saraswathi[i][j]=1;
+            }
+            printf("\nRoom added successfully !\n");
+            }
+            else{
+                printf("\nRoom already exists\n");
+            }
+            }
+
+        input();
+    }
+
+
+
+
+    if(strcmp(token,"remove")==0) {
+        char *name = strtok(NULL,d);
+
+        if(strcmp(name,"Ganga")==0) {
+            char *number = strtok(NULL,d);
+            int i= (number[0]-'0')*100 + (number[1]-'0')*10 + (number[2]-'0');
+            if(Ganga[i][1]!=0){
+            for (int j=0;25>j;j++) {
+                Ganga[i][j]=0;
+            }
+            printf("\nRoom removed successfully !\n");
+            }
+            else{
+                printf("\nRoom already doesn't exist\n");
+            }
+            }
+
+        if(strcmp(name,"Jamuna")==0) {
+            char *number = strtok(NULL,d);
+            int i= (number[0]-'0')*100 + (number[1]-'0')*10 + (number[2]-'0');
+            if(Jamuna[i][1]!=0){
+            for (int j=0;25>j;j++) {
+                Jamuna[i][j]=0;
+            }
+            printf("\nRoom removed successfully !\n");
+            }
+            else{
+                printf("\nRoom already doesn't exist\n");
+            }
+            }
+
+        if(strcmp(name,"Saraswathi")==0) {
+            char *number = strtok(NULL,d);
+            int i= (number[0]-'0')*100 + (number[1]-'0')*10 + (number[2]-'0');
+            if(Saraswathi[i][1]!=0){
+            for (int j=0;25>j;j++) {
+                Saraswathi[i][j]=0;
+            }
+            printf("\nRoom removed successfully !\n");
+            }
+            else{
+                printf("\nRoom already doesn't exist\n");
+            }
+            }
+
+        input();
+    }
+
+
+
+    if(strcmp(token,"reserve")==0) {
+        char *name = strtok(NULL,d);
+
+        if(strcmp(name,"Ganga")==0) {
+            char *number = strtok(NULL,d);
+            int i= (number[0]-'0')*100 + (number[1]-'0')*10 + (number[2]-'0');
+
+            if(Ganga[i][1]!=0) {
+                char *number = strtok(NULL,d);
+                int j= (number[0]-'0')*10 + (number[1]-'0');
+
+                number = strtok(NULL,d);
+                int k= (number[0]-'0')*10 + (number[1]-'0');
+
+                for (int l=j+1;k>=l;l++) {
+                    if (Ganga[i][l]==2) {
+                        printf("\nRoom already reserved !\n");
+                        break;
+                    }
+                    else {
+                        Ganga[i][l]=2;
+                    }
+                    printf("\nRoom reserved successfully for %d to %d!\n",l-1,l);
+                }
+            }
+
+            else {
+                printf("\nRoom not available\n");
+            }
+        }
+
+        
+        if(strcmp(name,"Jamuna")==0) {
+            char *number = strtok(NULL,d);
+            int i= (number[0]-'0')*100 + (number[1]-'0')*10 + (number[2]-'0');
+
+            if(Jamuna[i][1]!=0) {
+                char *number = strtok(NULL,d);
+                int j= (number[0]-'0')*10 + (number[1]-'0');
+
+                number = strtok(NULL,d);
+                int k= (number[0]-'0')*10 + (number[1]-'0');
+
+                for (int l=j+1;k>=l;l++) {
+                    if (Jamuna[i][l]==2) {
+                        printf("\nRoom already reserved for %d to %d!\n",l-1,l);
+                        break;
+                    }
+                    else {
+                        Jamuna[i][l]=2;
+                    }
+                   printf("\nRoom reserved successfully for %d to %d!\n",l-1,l);
+                }
+            }
+
+            else {
+                printf("\nRoom not available\n");
+            }
+        }
+
+        
+        if(strcmp(name,"Saraswathi")==0) {
+            char *number = strtok(NULL,d);
+            int i= (number[0]-'0')*100 + (number[1]-'0')*10 + (number[2]-'0');
+
+            if(Saraswathi[i][1]!=0) {
+                char *number = strtok(NULL,d);
+                int j= (number[0]-'0')*10 + (number[1]-'0');
+
+                number = strtok(NULL,d);
+                int k= (number[0]-'0')*10 + (number[1]-'0');
+
+                for (int l=j+1;k>=l;l++) {
+                    if (Saraswathi[i][l]==2) {
+                        printf("\nRoom already reserved for %d to %d!\n",l-1,l);
+                        break;
+                    }
+                    else {
+                        Saraswathi[i][l]=2;
+                    }
+                    printf("\nRoom reserved successfully for %d to %d!\n",l-1,l);
+                }
+            }
+
+            else {
+                printf("\nRoom not available\n");
+            }
+        }
+        input();
+    }
+
+
+    if(strcmp(token,"cancel")==0) {
+        char *name = strtok(NULL,d);
+
+        if(strcmp(name,"Ganga")==0) {
+            char *number = strtok(NULL,d);
+            int i= (number[0]-'0')*100 + (number[1]-'0')*10 + (number[2]-'0');
+
+            if(Ganga[i][1]!=0) {
+                char *number = strtok(NULL,d);
+                int j= (number[0]-'0')*10 + (number[1]-'0');
+
+                number = strtok(NULL,d);
+                int k= (number[0]-'0')*10 + (number[1]-'0');
+
+                for (int l=j+1;k>=l;l++) {
+                    if (Ganga[i][j]==2) {
+                    Ganga[i][l]=1;                   
+                    printf("\nRoom cancelled successfully for %d to %d!\n",l-1,l);
+                    }
+                    else {
+                        printf("\nRoom is already unreserved for %d to %d\n",l-1,l);
+                    }
+                }
+            }
+
+            else {
+                printf("\nRoom not available\n");
+            }
+        }
+
+
+        if(strcmp(name,"Jamuna")==0) {
+            char *number = strtok(NULL,d);
+            int i= (number[0]-'0')*100 + (number[1]-'0')*10 + (number[2]-'0');
+
+            if(Jamuna[i][1]!=0) {
+                char *number = strtok(NULL,d);
+                int j= (number[0]-'0')*10 + (number[1]-'0');
+
+                number = strtok(NULL,d);
+                int k= (number[0]-'0')*10 + (number[1]-'0');
+
+                for (int l=j+1;k>=l;l++) {
+                   if (Jamuna[i][j]==2) {
+                    Jamuna[i][l]=1;                   
+                    printf("\nRoom cancelled successfully for %d to %d!\n",l-1,l);
+                    }
+                    else {
+                        printf("\nRoom is already unreserved for %d to %d\n",l-1,l);
+                    }
+                }
+            }
+
+            else {
+                printf("\nRoom not available\n");
+            }
+        }
+
+
+        if(strcmp(name,"Saraswathi")==0) {
+            char *number = strtok(NULL,d);
+            int i= (number[0]-'0')*100 + (number[1]-'0')*10 + (number[2]-'0');
+
+            if(Saraswathi[i][1]!=0) {
+                char *number = strtok(NULL,d);
+                int j= (number[0]-'0')*10 + (number[1]-'0');
+
+                number = strtok(NULL,d);
+                int k= (number[0]-'0')*10 + (number[1]-'0');
+
+                for (int l=j+1;k>=l;l++) {
+                    if (Saraswathi[i][j]==2) {
+                    Saraswathi[i][l]=1;                   
+                    printf("\nRoom cancelled successfully for %d to %d!\n",l-1,l);
+                    }
+                    else {
+                        printf("\nRoom is already unreserved for %d to %d\n",l-1,l);
+                    }
+                }
+            }
+
+            else {
+                printf("\nRoom not available\n");
+            }
+        }
+        input();
+    }
+
+
+
+    if(strcmp(token,"rooms")==0) {
+        printf("\nRooms Available :\n");
+        for(int i=1;700>i;i++) {
+            for(int j=1;25>j;j++) {
+                if(Ganga[i][j]==1) {
+                    printf("Ganga %d\n",i);
+                    break;
+                }
+            }
+        }
+
+        for(int i=1;700>i;i++) {
+            for(int j=1;25>j;j++) {
+                if(Jamuna[i][j]==1) {
+                    printf("Jamuna %d\n",i);
+                    break;
+                }
+            }
+        }
+
+        for(int i=1;700>i;i++) {
+            for(int j=1;25>j;j++) {
+                if(Saraswathi[i][j]==1) {
+                    printf("Saraswathi %d\n",i);
+                    break;
+                }
+            }
+        }
+        input();
+    }
+
+
+
+    if(strcmp(token,"timeslots")==0) {
+        printf("\nRooms Reserved :\n");
+        for(int i=1;700>i;i++) {
+            for(int j=1;25>j;j++) {
+                if(Ganga[i][j]==2) {
+                    printf("Ganga %d %d-%d\n",i,(j-1),j);
+                }
+            }
+        }
+
+        for(int i=1;700>i;i++) {
+            for(int j=1;25>j;j++) {
+                if(Jamuna[i][j]==2) {
+                    printf("Jamuna %d %d-%d\n",i,(j-1),j);
+                }
+            }
+        }
+
+        for(int i=1;700>i;i++) {
+            for(int j=1;25>j;j++) {
+                if(Saraswathi[i][j]==2) {
+                    printf("Saraswathi %d %d-%d\n",i,(j-1),j);
+                }
+            }
+        }
+        input();
+    }
+
+
+    if(strcmp(token,"exit")==0) {
+        return;
+    }
+
+}
+
+int main() {
+    input();
+}
